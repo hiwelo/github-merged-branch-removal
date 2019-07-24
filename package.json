@@ -1,0 +1,26 @@
+{
+  "name": "github-merged-branch-removal",
+  "version": "0.0.0",
+  "description": "Script removing merged branches for the latest PRs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hiwelo/github-merged-branch-removal.git"
+  },
+  "keywords": [
+    "github",
+    "pull",
+    "request",
+    "branch",
+    "git"
+  ],
+  "author": "Damien Senger <damien@raccoon.studio>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiwelo/github-merged-branch-removal/issues"
+  },
+  "homepage": "https://github.com/hiwelo/github-merged-branch-removal#readme"
+}
