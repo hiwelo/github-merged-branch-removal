@@ -2,11 +2,14 @@
   "name": "github-merged-branch-removal",
   "version": "0.0.0",
   "description": "Script removing merged branches for the latest PRs",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "shx mkdir dist && babel src -s -d dist",
-    "dev": "nodemon --exec npx @babel/node -- ./src/index.ts --extensions \".js\", \".ts\" --config-file .babelrc",
-    "lint": "eslint . --ext .ts,.js"
+    "dev": "nodemon --exec npx @babel/node -- ./src/index.ts --extensions \".ts,.tsx\"",
+    "lint": "eslint . --ext .ts,.js",
+    "type-check": "tsc --noEmit",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline"
   },
   "repository": {
     "type": "git",
@@ -56,6 +59,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "core-js": "^3.1.4",
+    "regenerator-runtime": "^0.13.3",
     "shelljs": "^0.8.3"
   }
 }
